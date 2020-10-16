@@ -107,7 +107,7 @@ const init = (lang = _lang, dict, defaultLang = 'en-US') => {
 
 if (typeof module !== 'undefined') {
 	module.exports = {
-		default: getLang,
+		default: getText,
 		init
 	};
 }
