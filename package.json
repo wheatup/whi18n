@@ -1,15 +1,24 @@
 {
-  "name": "whi18n",
-  "version": "1.0.0",
-  "description": "",
-  "main": "whi18n.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.17.20"
-  }
+	"name": "whi18n",
+	"version": "1.0.0",
+	"description": "",
+	"main": "whi18n.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"i18n",
+		"localization",
+		"multilanguage",
+		"language"
+	],
+	"author": "wheatup",
+	"license": "MIT",
+	"dependencies": {
+		"lodash": "^4.17.20"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wheatup/whi18n.git"
+	}
 }
