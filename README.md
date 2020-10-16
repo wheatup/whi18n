@@ -1,5 +1,7 @@
 # whi18n
 
+A univeral i18n library.
+
 ## Install
 
 ```bash
@@ -22,6 +24,7 @@ const langData = {
 		"version": 1,
 		"texts": {
 			"marco": "Polo",
+			"mail": "You have recieved ${1} mails"
 			"foo": {
 				"bar": "baz"
 			}
@@ -31,8 +34,9 @@ const langData = {
 		"version": 1,
 		"texts": {
 			"marco": "ポロ",
+			"mail": "メールが${1}通を受け取りました"
 			"foo": {
-				"bar": "バズ"
+				"bar": "バズ",
 			}
 		}
 	}
@@ -63,6 +67,12 @@ console.log(whi18n`foo.bar`);	// バズ
 <!-- <span>ポロ</span>  -->
 <span>@{marco}</span>	
 
+<!-- use variables -->
+<!-- <span>メールが3通を受け取りました</span>  -->
+<span>@{mail:3}</span>	
+
 <!-- <span title="バズ">Hello, world!</span>  -->
 <span title="@{foo.bar}">Hello, world!</span>	
+
+
 ```
