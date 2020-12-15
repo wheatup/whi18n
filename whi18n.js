@@ -48,7 +48,9 @@ const init = (lang = _lang, dict, defaultLang = 'en-US') => {
 
 	if (observer) return;
 	const replace = (_, e, args) => {
-		args = args && args.split(/(?<![^\\](\\\\)*\\),/);
+		args = args && args.split(',');
+		// stupid safari
+		// args = args && args.split(/(?<![^\\](\\\\)*\\),/);
 		let text = getText(e, lang);
 		if (/\$\{(\d+)\}/g[Symbol.match](text)) {
 			text = text.replace(/\$\{(\d+)\}/g, (_, e) => (args && args[e - 1]) || '');
