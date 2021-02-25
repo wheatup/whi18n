@@ -60,7 +60,7 @@ const init = (lang = _lang, dict, defaultLang = 'en-US') => {
 	const regex = /@\{\s*(.*?)(?::(.*))?}/g;
 	const replaceChildren = node => {
 		if (node instanceof HTMLElement) {
-			node.attributes.forEach(attr => {
+			[...node.attributes].forEach(attr => {
 				if (regex[Symbol.match](attr.name)) {
 					attr.name = attr.name.replace(regex, replace);
 				}
@@ -68,7 +68,7 @@ const init = (lang = _lang, dict, defaultLang = 'en-US') => {
 					attr.value = attr.value.replace(regex, replace);
 				}
 			});
-			node.childNodes.forEach(node => {
+			[...node.childNodes].forEach(node => {
 				replaceChildren(node);
 			});
 
@@ -81,7 +81,7 @@ const init = (lang = _lang, dict, defaultLang = 'en-US') => {
 		list.forEach(mutation => {
 			if (mutation.type === 'childList') {
 				if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-					mutation.addedNodes.forEach(node => {
+					[...mutation.addedNodes].forEach(node => {
 						replaceChildren(node);
 					})
 				}
