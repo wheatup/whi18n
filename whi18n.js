@@ -27,11 +27,14 @@ const getLang = lang => {
 	}
 }
 
-const getText = (key, ..._) => {
+const getText = (key, ...args) => {
 	if (key.raw) {
-		key = key.reduce((acc, cur, i) => acc + cur + (_[i] || ''), '')
+		key = key.reduce((acc, cur, i) => acc + cur + (args[i] || ''), '')
 	}
-	return get(langData.texts, key) || get(defaultLangData.texts, key) || key;
+	
+	let text = get(langData.texts, key) || get(defaultLangData.texts, key) || key;
+	text = text.replace(/\$\{(\d+)\}/g, (_, e) => (args && args[e - 1]) || '');
+	return text;
 }
 
 const init = (lang = _lang, dict, defaultLang = 'en-US') => {
