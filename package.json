@@ -1,8 +1,8 @@
 {
-	"name": "whi18n",
+	"name": "udf-i18n",
 	"version": "1.1.0",
 	"description": "",
-	"main": "whi18n.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
