@@ -12,7 +12,7 @@
 		"multilanguage",
 		"language"
 	],
-	"author": "wheatup",
+	"author": "undefineded",
 	"license": "MIT",
 	"dependencies": {
 		"lodash": "^4.17.20"
